@@ -2,13 +2,11 @@ cmake_minimum_required(VERSION 2.8)
 
 project(dtoverlay)
 
-if (NOT WIN32)
-   add_definitions(-Wall -Werror)
-endif ()
+add_definitions(-Wall -Werror)
 
 add_executable(dtoverlay dtoverlay_main.c utils.c)
 
-target_link_libraries(dtoverlay dtovl efdt)
+target_link_libraries(dtoverlay dtovl fdt)
 
 install(TARGETS dtoverlay RUNTIME DESTINATION bin)
 
