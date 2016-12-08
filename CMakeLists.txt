@@ -6,6 +6,8 @@ add_definitions(-Wall -Werror)
 
 add_executable(dtoverlay dtoverlay_main.c utils.c)
 
+include_directories(${CMAKE_SYSROOT}/include)
+
 target_link_libraries(dtoverlay dtovl fdt)
 
 install(TARGETS dtoverlay RUNTIME DESTINATION bin)
